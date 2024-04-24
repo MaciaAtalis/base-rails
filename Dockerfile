@@ -27,6 +27,3 @@ RUN rm -rf tmp/*
 ADD . /app
 # Expón el puerto 3000 para la aplicación Rails
 EXPOSE 3000
-
-# Ejecuta el servidor Rails al iniciar el contenedor
-CMD ["rails", "server", "-b", "0.0.0.0"]
