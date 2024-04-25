@@ -1,8 +1,9 @@
 version: '3.7'
 services:
   web:
-    container_name: cms-web
+    container_name: base_rails_example
     command: bash -c "rails s -b '0.0.0.0'"
     build: .
-    ports: 
-      - '80:3000'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.base_app.rule=Host(`base_app.localhost`)"
